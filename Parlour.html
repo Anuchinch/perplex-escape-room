@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Parlour</title>
+    <link rel="stylesheet" href="styles/master.css" />
+    <script src="scripts/parlour.js"></script>
+</head>
+
+<body>
+    <div class="topbar" id="topbar" onclick="nextClue()">
+        <div class="roomTitle" id="roomTitle">Parlour</div>
+    </div>
+    <!--<div class="legend">
+        <div style="margin: 0.5rem; font-size: 1.5rem; font-weight: bold;">Legend:</div>
+        <span class="grab" style="margin: 0.5rem;">Inventory Items</span>
+        <span class="sceneChange" style="margin: 0.5rem;">Look At</span>
+    </div>-->
+    <div class="mainGrid" id="mainGrid">
+        <div class="inventory" id="inventory">
+            <div class="inventoryTitle">Inventory</div>
+            <ul class="inventoryStack" id="inventoryStack"></ul>
+            <div class="useButton" onclick="useInventory()">
+                Use Inventory Items
+            </div>
+        </div>
+        <div id="screen" class="screen">
+            <div id="openingScene" class="scene" style="display: block;">
+                <div class="sceneTitle">Opening</div>
+                <div class="text" style="display: block;">
+                    You enter the parlour. It is simply furnished. A short 
+                    <span class="sceneChange" onclick="nextScene('sofa')">Sofa</span>
+                    is placed along the left wall, with a 
+                    <span class="sceneChange" onclick="nextScene('table')">Coffee Table</span>
+                    infront of it. A large 
+                    <span class="sceneChange" onclick="nextScene('clock')">Grandfather Clock</span>
+                    is placed along the far side of the room. There is a 
+                    <span class="sceneChange" onclick="nextScene('desk')">Writing Desk</span>
+                    to your right.
+                </div>
+            </div>
+            <p id="stamp" class="empty"></p>
+            <div id="leaflet" class="scene">
+                <div class="leaflet">
+                    You press the Stamp on the Inkpad and use it on the Paper. It leaves behind the following impression:<br />
+                    0 1 2 3 4 5 6 7 8 9 <br />
+                    A B C D E F G H I J <br />
+                    K L M N O P Q R S T <br />
+                    U V W X Y Z 
+                </div>
+            </div>
+            <div id="sofa" class="scene">
+                <div class="sceneTitle">The Sofa</div>
+                <div class="text">
+                    You sit down on the Sofa, but there is a strangely-shaped lump in the 
+                    <span id="cushion" class="grab" onclick="putInInventory('Sofa Cushion', 'cushion')">Sofa Cushion</span>.
+                </div>
+            </div>
+            <div id="table" class="scene">
+                <div class="sceneTitle">The Coffee Table</div>
+                <div class="text">
+                    There are a few books scattered across the table. You glance at the titles: 
+                    <span class="grab" onclick="nextText('titleOne')">Four Past Midnight</span>, 
+                    <span class="grab" onclick="nextText('titleTwo')">4:50 from Paddington</span>, 
+                    <span class="grab" onclick="nextText('titleThree')">The Stars at Noon</span>.
+                </div>
+                <div id="titleOne" class="text" style="display: none;">
+                    Below the title, large letters spell out the name of the author: <a href="extra/king.jpg" target="_blank">KING</a>.
+                </div>
+                <div id="titleTwo" class="text" style="display: none;">
+                    The summary of the book mentions the name of the protagonist, JANE.
+                </div>
+                <div id="titleThree" class="text" style="display: none;">
+                    A large tag affixed to the cover proclaims the book is a GIFT.
+                </div>
+            </div>
+            <div id="clock" class="scene">
+                <div class="sceneTitle">The Grandfather Clock</div>
+                <div class="text">
+                    You walk closer to the large clock. It is not ticking. Infact, it is stuck at ten minutes to five. 
+                    You hear faint whimpers from the 
+                    <span class="sceneChange" onclick="nextText('body')">Body</span>
+                     of the clock.
+                </div>
+                <div id="body" class="text" style="display: none;">
+                    You look closer at the main portion of the clock. There is a numerical lock on the latch at the back. You try setting it to:
+                    <input class="textbox" type="text" name="code" id="clockCodeBox" placeholder="0000" />
+                    <span class="submitButton" onclick="clockCode()">Submit</span>
+                </div>
+            </div>
+            <div id="desk" class="scene">
+                <div class="sceneTitle">The Writing Desk</div>
+                <div class="text">
+                    The writing desk is old-fashioned and made of wood. 
+                    There is a large 
+                    <span id="inkpad" class="grab" onclick="putInInventory('Inkpad', 'inkpad')">Inkpad</span>
+                     upon its surface. A sheaf of 
+                    <span id="paper" class="grab" onclick="putInInventory('Paper', 'paper')">Papers</span>
+                     is neatly arranged to one side, and a pair of 
+                    <span id="scissor" class="grab" onclick="putInInventory('Scissors', 'scissor')">Scissors</span>
+                     acts as paperweight.
+                </div>
+            </div>
+            <div id="freedom" class="scene" style="display: none;">
+                <div class="sceneTitle">Success</div>
+                <div class="text">
+                    The lock clicks open. A man squints out. 
+                    You slowly coax him to leave the clock. He is the Head Scientist at BARC, and thanks you for your rescue.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

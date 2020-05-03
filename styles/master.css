@@ -1,0 +1,218 @@
+@font-face {
+    font-family: 'acme';
+    src: url('fonts/Acme/Acme-Regular.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'inconsolata';
+    src: url('fonts/Inconsolata/Inconsolata-Regular.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'poppins';
+    src: url('fonts/Poppins/Poppins-Regular.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'cairo';
+    src: url('fonts/Cairo/Cairo-Regular.ttf')format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: auto;
+}
+
+.topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90vw;
+    background-color: greenyellow;
+    padding: 0.25rem 0.25rem;
+    margin: 2vh 5vw;
+    text-align: center;
+    transition: 100ms;
+}
+
+.topbar:hover {
+    box-shadow: 0.125rem 0.125rem 0.125rem rgba(0, 0, 0, 0.5);
+}
+
+
+.roomTitle {
+    font-family: 'acme';
+    font-size: 2rem;
+    color: black;
+}
+
+
+.mainGrid {
+    margin-top: 10vh;
+    display: grid;
+    grid-template-columns: 5vw 1fr 1fr 1fr 5vw;
+    column-gap: 1vw;
+    grid-template-areas: ". screen screen inventory .";
+    overflow: auto;
+}
+
+
+.screen {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-area: screen;
+    overflow: auto;
+    height: 85vh;
+}
+
+
+.inventory {
+    grid-column-start: 4;
+    background-color: white;
+    grid-area: inventory;
+}
+
+.inventoryTitle {
+    font-size: 2rem;
+    font-family: 'acme';
+    text-align: center;
+    margin: 2vh auto;
+}
+
+.inventoryStack{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.inventoryStack > li {
+    padding: 0.25rem;
+}
+
+.inventoryItem {
+    font-family: sans-serif;
+    text-align: center;
+    height: 2rem;
+    margin: 0.25rem;
+    line-height: 2rem;
+    border: 0.125rem solid coral;
+    transition: 100ms;
+}
+
+.inventoryItem:hover {
+    background-color: coral;
+    color: white;
+}
+
+.useButton {
+    font-family: sans-serif;
+    width: 80%;
+    background-color: gold;
+    padding: 0.5rem;
+    margin-left: 10%;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+    text-align: center;
+    cursor: pointer;
+    transition: 50ms;
+    color: black;
+}
+
+.useButton:hover {
+    outline: solid 0.25rem rebeccapurple
+}
+
+.grab {
+    cursor: grab;
+    text-decoration: underline;
+}
+
+.grab:hover {
+    outline: 2px dotted cyan ;
+}
+
+.grab:active {
+    cursor: grabbing;
+}
+
+.scene {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: 100ms;
+    color: white;
+    padding: 1rem 1rem;
+    cursor: pointer;
+    margin: 1rem;
+}
+
+.leaflet {
+	text-align: center;
+	font-family: 'inconsolata';
+	font-size: 1.25rem;
+}
+
+.text {
+    margin: 0.25rem;
+    font-family: 'cairo';
+    font-size: 1.25rem;
+}
+
+.text a {
+    text-decoration: none;
+    color: white;
+}
+
+.scene:hover {
+    outline: 0.5rem solid rgba(255, 0, 43, 0.75);   
+}
+
+.sceneChange {
+    text-decoration: underline;
+}
+
+.sceneChange:hover {
+    outline: 0.125rem dotted orange;
+    cursor: pointer; 
+}
+
+.sceneTitle {
+    font-family: 'poppins';
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2vh;
+}
+
+.submitButton {
+    background-color: orangered;
+    font-family: 'poppins';
+    font-size: 1rem;
+    padding: 0.25rem;
+    width: fit-content;
+}
+
+.textbox {
+    border: black 2px solid;
+    padding: 0.25rem;
+    font-size: 1rem;
+}
+
+.legend {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 2vh;
+    margin-right: 2vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-family: 'poppins';
+    padding: 1rem;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}

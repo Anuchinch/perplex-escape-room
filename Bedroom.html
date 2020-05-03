@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bedroom</title>
+    <link rel="stylesheet" href="styles/master.css" />
+    <script src="scripts/bedroom.js"></script>
+</head>
+
+<body>
+    <div class="topbar" id="topbar" onclick="nextClue()">
+        <div class="roomTitle" id="roomTitle">Bedroom</div>
+    </div>
+    <!--<div class="legend">
+        <div style="margin: 0.5rem; font-size: 1.5rem; font-weight: bold;">Legend:</div>
+        <span class="grab" style="margin: 0.5rem;">Inventory Items</span>
+        <span class="sceneChange" style="margin: 0.5rem;">Look At</span>
+    </div>-->
+    <div class="mainGrid" id="mainGrid">
+        <div class="inventory" id="inventory">
+            <div class="inventoryTitle">Inventory</div>
+            <ul class="inventoryStack" id="inventoryStack"></ul>
+            <div class="useButton" onclick="useInventory()">
+                Use Inventory Items
+            </div>
+        </div>
+        <div id="screen" class="screen">
+            <div id="openingScene" class="scene" style="display: block;">
+                <div class="sceneTitle">Opening</div>
+                <div class="text" style="display: block;">
+                    You enter into a cozy, well-lit bedroom. The
+                    <a target="_blank()" href="wall.jpg">wallpaper</a> is a pattern of
+                    six easter lilies. A large
+                    <span class="sceneChange" onclick="nextScene('bed')">Platform Bed</span>
+                    takes up the centre of the room. There is a short
+                    <span class="sceneChange" onclick="nextScene('nightstand')">Nightstand</span>
+                    beside it. A
+                    <span class="sceneChange" onclick="nextScene('cupboard')">Cupboard</span>
+                    stands to one side.
+                </div>
+            </div>
+            <div id="bed" class="scene">
+                <div class="sceneTitle">The Bed</div>
+                <div class="text">
+                    You walk to the bed. You pull off the vibrant bedsheet, ignoring the
+                    pair of swans painted on to it. A
+                    <span id="coin" class="grab" onclick="putInInventory('Coin', 'coin')">Five-Rupee Coin</span>
+                    also rolls off the bed. A simple mattress lies beneath, which you
+                    overturn. Below the mattress, you are shocked to see a
+                    <span class="sceneChange" onclick="nextScene('trapdoor')">
+                        Trapdoor.</span>
+                </div>
+            </div>
+            <div id="trapdoor" class="scene">
+                <div class="sceneTitle">The Trapdoor</div>
+                <div class="text">
+                    The trapdoor is locked with a 6 digit code:
+                    <input class="textbox" type="text" name="code" id="trapdoorCodeBox" placeholder="code" />
+                    <span class="submitButton" onclick="trapdoorCode()">Submit</span>
+                </div>
+            </div>
+            <div id="nightstand" class="scene">
+                <div class="sceneTitle">The Nightstand</div>
+                <div class="text">
+                    You check the drawers of the nightstand. There are zero items in the
+                    drawers. On the table itself, a
+                    <span id="photograph" class="grab"
+                        onclick="putInInventory('Photograph', 'photograph'); nextText('aboutPhoto');">Photograph</span>
+                    is placed front and center. A
+                    <span class="sceneChange" onclick="nextScene('lamp')">Lamp</span>
+                    puts out a soft glow.
+                </div>
+                <div id="aboutPhoto" class="text" style="display: none;">
+                    The photograph is of a young girl blowing out seven candles on a
+                    cake. Behind the photo, you can see some written text, but it is
+                    obscured by a sticky substance adhered to the paper.
+                </div>
+            </div>
+            <div id="lamp" class="scene">
+                <div class="sceneTitle">The Lamp</div>
+                <div class="text">
+                    The lampshade has been handpainted with eight apples.
+                </div>
+            </div>
+            <div id="cupboard" class="scene">
+                <div class="sceneTitle">The Cupboard</div>
+                <div class="text">
+                    The cupboard is locked, with a four-digit numerical lock. Scratched above the lock you can see the word 'BIRTHDAY'. What would you like to try?
+                    <input class="textbox" type="text" name="code" id="cupboardCodeBox" placeholder="code" />
+                    <span class="submitButton" onclick="cupboardCode()">Submit</span>
+                </div>
+                <div id="insideCupboard" class="text" style="display: none;">
+                    You open the cupboard to see nine shirts on hangers. A small
+                    <span class="sceneChange" onclick="nextText('letter')">Letter</span>
+                    rests on one of the shelves.
+                </div>
+                <div class="text" id="letter" style="display: none;">
+                    The letter reads:<br />
+                    Dear Preeti,<br />
+                    Today I wore my favorite <i>shirt</i> and ate an <i>apple</i> for breakfast. 
+                    I found a figurine of a <i>swan</i> in my hotel <i>drawer</i>. 
+                    I've bought a <i>lily</i> and a gift from a <i>coin</i> operated machine.<br />
+                    See you soon, <br />
+                    Father
+                </div>
+            </div>
+            <div id="freedom" class="scene" style="display: none;">
+                <div class="sceneTitle">Freedom</div>
+                <div class="text">
+                    The trapdoor opens, with an almighty lurch, to reveal the cavernous
+                    cellar underneath. As you enter the cellar your attention is drawn
+                    towards the corner of the cavern. A woman huddling in the corner raises
+                    her head. You have found the Director of ISRO!
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

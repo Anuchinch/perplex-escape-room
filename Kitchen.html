@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Kitchen</title>
+    <link rel="stylesheet" href="styles/master.css" />
+    <script src="scripts/kitchen.js"></script>
+</head>
+
+<body>
+    <div class="topbar" id="topbar" onclick="nextClue()">
+        <div class="roomTitle" id="roomTitle">Kitchen</div>
+    </div>
+    <!--<div class="legend">
+        <div style="margin: 0.5rem; font-size: 1.5rem; font-weight: bold;">Legend:</div>
+        <span class="grab" style="margin: 0.5rem;">Inventory Items</span>
+        <span class="sceneChange" style="margin: 0.5rem;">Look At</span>
+    </div>-->
+    <div class="mainGrid" id="mainGrid">
+        <div class="inventory" id="inventory">
+            <div class="inventoryTitle">Inventory</div>
+            <ul class="inventoryStack" id="inventoryStack"></ul>
+            <div class="useButton" onclick="useInventory()">
+                Use Inventory Items
+            </div>
+        </div>
+        <div id="screen" class="screen">
+            <div id="openingScene" class="scene" style="display: block;">
+                <div class="sceneTitle">Opening</div>
+                <div class="text" style="display: block;">
+                    You enter into a brightly lit Kitchen. There is a large 
+                    <span class="sceneChange" onclick="nextScene('window')">Window</span>
+                     opposite you, above the 
+                    <span class="sceneChange" onclick="nextScene('counter')">Kitchen Counter</span>
+                    . To your right, you see a 
+                    <span class="sceneChange" onclick="nextScene('refrigerator')">Refrigerator</span>
+                    . To your left, there is a long 
+                    <span class="sceneChange" onclick="nextScene('table')">Dining Table</span>
+                </div>
+            </div>
+            <div id="leaflet" class="scene">
+                <div class="leaflet">
+                    A small leaflet falls out of the Salt Shaker.
+                    "New In Nagpur: Enjoy The Exotic Extravaganza Nights"
+                </div>
+            </div>
+            <div id="window" class="scene">
+                <div class="sceneTitle">The Window</div>
+                <div class="text">
+                    You can see a <a href="extra/garden.jpg" target="_blank">garden</a> out of the window. 
+                    A sign proclaims: "The First Letter is Important".  
+                    A <span style="color:yellow;">yellow</span> garden gnome stands beside it.
+                </div>
+            </div>
+            <div id="counter" class="scene">
+                <div class="sceneTitle">The Kitchen Counter</div>
+                <div class="text">
+                    A 
+                    <span id="hammer" class="grab"
+                        onclick="putInInventory('Hammer', 'hammer');">Hammer</span>
+                     is kept on the counter. There is a 
+                    <span class="sceneChange" onclick="nextScene('drawer')">Drawer</span>
+                     below the counter.
+                </div>
+            </div>
+            <div id="drawer" class="scene">
+                <div class="sceneTitle">The Drawer</div>
+                <div class="text">
+                    You open the Drawer to see a 
+                    <span id="screwdriver" class="grab"
+                        onclick="putInInventory('Screwdriver', 'screwdriver');">Screwdriver</span>.                    
+                </div>
+            </div>
+            <div id="table" class="scene">
+                <div class="sceneTitle">The Dining Table</div>
+                <div class="text">
+                    The dining table is barren except for a single
+                    <span id="salt" class="grab"
+                        onclick="putInInventory('Salt Shaker', 'salt');">Salt Shaker</span>.
+                    You can see something lodged within the salt. 
+                    Towards the far end of the table, you can see a 
+                    <span class="sceneChange" onclick="nextScene('breaker')">Circuit Breaker</span>.
+                </div>
+            </div>
+            <div id="breaker" class="scene">
+                <div class="sceneTitle">The Circuit Breaker</div>
+                <div class="text">
+                    You open the Circuit Breaker. There are wires of many colours, and a port. 
+                    You know you have to connect one of the wires to the port. What is the colour of the wire you connect?
+                    <input class="textbox" type="text" name="code" id="breakerCodeBox" placeholder="colour" />
+                    <span class="submitButton" onclick="breakerCode()">Submit</span>
+                </div>
+            </div>
+            <div id="refrigerator" class="scene">
+                <div class="sceneTitle">The Refrigerator</div>
+                <div class="text">
+                    You open the Refrigerator. It is empty. There is a small 
+                    <span class="sceneChange" onclick="nextScene('panel'); panelFlag=1;">Panel</span>
+                     at the very back.
+                </div>
+            </div>
+            <div id="panel" class="scene">
+                <div class="sceneTitle">The Panel</div>
+                <div id="panelText1" class="text">
+                    You try to open the Panel, but it is screwed in. 
+                </div>
+                <div id="panelText2" class="text" style="display: none;">
+                    The Panel conceals a numeric keypad. What code would you like to try?
+                    <input class="textbox" type="text" name="code" id="panelCodeBox" placeholder="00" />
+                    <span class="submitButton" onclick="panelCode()">Submit</span>
+                </div>
+            </div>
+            <div id="freedom" class="scene" style="display: none;">
+                <div class="sceneTitle">Freedom</div>
+                <div class="text">
+                    The heavy fridge slides on noiseless hinges to reveal a secret room hidden behind. A man sleeping on a cot
+                    startles awake. You've found the Head Researcher at DRDO!
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

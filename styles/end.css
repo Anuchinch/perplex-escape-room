@@ -1,0 +1,94 @@
+@font-face {
+    font-family: 'acme';
+    src: url('fonts/Acme/Acme-Regular.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'poppins';
+    src: url('fonts/Poppins/Poppins-Regular.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'cairo';
+    src: url('fonts/Cairo/Cairo-Regular.ttf')format('truetype');
+}
+
+.topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90vw;
+    background-color: greenyellow;
+    padding: 0.25rem 0.25rem;
+    margin: 2vh 5vw;
+    text-align: center;
+    transition: 100ms;
+}
+
+.topbar:hover {
+    box-shadow: 0.125rem 0.125rem 0.125rem rgba(0, 0, 0, 0.5);
+}
+
+
+.roomTitle {
+    font-family: 'acme';
+    font-size: 2rem;
+    color: black;
+}
+
+.scene {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: 100ms;
+    color: white;
+    padding: 1rem 1rem;
+    cursor: pointer;
+    margin: 1rem;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.text {
+    margin: 0.25rem;
+    font-family: 'cairo';
+    font-size: 1.25rem;
+}
+
+.scene:hover {
+    outline: 0.5rem solid rgba(255, 0, 43, 0.75);   
+}
+
+.creditGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 5vh;
+}
+
+.creator {
+    display: block;
+    font-family: 'acme';
+    text-align: center;
+    font-size: 1.25rem;
+    transition-duration: 100ms;
+}
+
+.content {
+    grid-area: content;
+}
+
+.mainDisplay {
+    display: grid;
+    grid-template-columns: 10vw 1fr 1fr 1fr 10vw;
+    grid-template-areas: ". content content content .";
+}
+
+.memeGrid {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 1rem;
+}
+
+.image {
+    width: 100%;
+    max-width: 100%;
+}

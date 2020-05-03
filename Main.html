@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    <link rel="stylesheet" href="styles/master.css" />
+    <script src="scripts/bedroom.js"></script>
+</head>
+
+<body>
+    <div class="topbar" id="topbar" onclick="nextClue()">
+        <div class="roomTitle" id="roomTitle">Hallway</div>
+    </div>
+    <!--<div class="legend">
+        <div style="margin: 0.5rem; font-size: 1.5rem; font-weight: bold;">Legend:</div>
+        <span class="grab" style="margin: 0.5rem;">Inventory Items</span>
+        <span class="sceneChange" style="margin: 0.5rem;">Look At</span>
+    </div>-->
+    <div class="mainGrid" id="mainGrid">
+        <div id="screen" class="screen">
+            <div id="openingScene" class="scene" style="display: block;">
+                <div class="sceneTitle">Opening</div>
+                <div class="text" style="display: block;">
+                    You enter into a silent, dimly-lit hallway. An air of foreboding hangs around the place. 
+                    There is a <span onclick="nextScene('light')">light switch</span> to your right. To your left, you see three doors along the corridor. 
+                    Closer inspection reveals a nameplate on each door: 
+                </div>
+            </div>
+            <div id="parlour" class="scene" style="display: block;">
+                <div class="sceneTitle"><a href = "Parlour.html" target="_blank"> The Parlour </a></div>
+            </div>
+            <div id="parlour" class="scene" style="display: block;">
+                <div class="sceneTitle"><a href = "Kitchen.html" target="_blank"> The Kitchen </a></div>
+            </div>
+            <div id="parlour" class="scene" style="display: block;">
+                <div class="sceneTitle"><a href = "Bedroom.html" target="_blank"> The Bedroom </a></div>
+            </div>
+            <div id="light" class="scene">
+                <div class="sceneTitle">The Light Switch</div>
+                <div class="text">
+                    You switch on the light switch. Instantly, your path ahead is illuminated. Remember these points:<br />
+                    1. No detail is unnecessary<br />
+                    2. As you have noticed, not all links are visible. There are three more Easter Eggs hidden within the rooms. 
+                    Each will get you extra points. However, these are not part of the puzzle, and can be safely ignored.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
